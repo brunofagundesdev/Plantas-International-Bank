@@ -1,61 +1,163 @@
-# CodeIgniter 4 Framework
+# 🌱 Planta's International Bank
 
-## What is CodeIgniter?
+Sistema bancário web desenvolvido com CodeIgniter 4 como projeto acadêmico, simulando operações reais de um banco digital.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+---
 
-This repository holds the distributable version of the framework.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+## 📌 Sobre o Projeto
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+O **Planta's International Bank** é uma aplicação que permite o gerenciamento de contas bancárias, incluindo cadastro de usuários, autenticação segura e execução de operações financeiras.
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+O sistema foi construído com foco em:
 
-## Important Change with index.php
+* Organização de código (MVC)
+* Segurança de dados
+* Regras de negócio consistentes
+* Experiência do usuário com interface web
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+---
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+## 🚀 Funcionalidades
 
-**Please** read the user guide for a better explanation of how CI4 works!
+### 👤 Cadastro de Conta
 
-## Repository Management
+* Criação de usuário com:
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+  * Nome do cliente
+  * Depósito inicial
+* Geração automática de:
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+  * Número da conta
+  * Username
+* Senha protegida com hash seguro (`password_hash`)
 
-## Contributing
+---
 
-We welcome contributions from the community.
+### 🔐 Login e Sessão
 
-Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md) section in the development repository.
+* Autenticação com username e senha
+* Validação com `password_verify`
+* Controle de sessão utilizando recursos do CodeIgniter 4
 
-## Server Requirements
+---
 
-PHP version 8.2 or higher is required, with the following extensions installed:
+### 💰 Extrato Bancário
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+* Histórico completo de transações
+* Registro de:
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - The end of life date for PHP 8.1 was December 31, 2025.
-> - If you are still using below PHP 8.2, you should upgrade immediately.
-> - The end of life date for PHP 8.2 will be December 31, 2026.
+  * Entradas (créditos)
+  * Saídas (débitos)
+* Cada transação contém:
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+  * Valor
+  * Data
+  * Tipo (Pix, boleto, transferência, etc)
+  * Descrição
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+---
+
+### 💸 Pagamentos
+
+* Simulação de pagamentos via:
+
+  * Pix
+  * Boleto
+  * Débito
+* Atualização automática do saldo
+* Registro no extrato
+
+---
+
+### 🔄 Transferências
+
+* Transferência entre contas cadastradas
+* Atualização de saldo em tempo real:
+
+  * Conta origem (débito)
+  * Conta destino (crédito)
+* Registro automático no histórico de ambas as contas
+
+---
+
+## ⚠️ Regras de Negócio
+
+* Não é permitido realizar transações sem saldo suficiente
+* Todas as operações são registradas no extrato
+* Cada conta possui identificador único
+* As transações são armazenadas com data e tipo
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+* PHP 8.5.5
+* CodeIgniter 4
+* MySQL
+* HTML5
+* CSS3
+
+---
+
+## 🔐 Segurança
+
+* Senhas armazenadas com `password_hash`
+* Verificação com `password_verify`
+* Uso de sessões para autenticação
+* Proteção contra operações inválidas (ex: saldo negativo)
+
+---
+
+## 💻 Ambiente de Desenvolvimento
+
+* XAMPP (Apache + MySQL)
+* Execução local
+
+---
+
+## ⚙️ Como Executar o Projeto
+
+1. Clone o repositório:
+
+   ``` bash
+   git clone <url-do-repositorio>
+   ```
+
+2. Configure o banco de dados:
+
+   * Crie um banco no MySQL
+   * Importe o arquivo `.sql` do projeto
+
+3. Configure o arquivo `.env`:
+
+   ```env
+   database.default.hostname = localhost
+   database.default.database = plantas_international-bank
+   database.default.username = root
+   database.default.password = 
+   database.default.DBDriver = MySQLi
+   ```
+
+4. Inicie o servidor:
+
+   ```
+   http://localhost/seu-projeto/public
+   ```
+
+---
+
+## 📚 Conceitos Aplicados
+
+* Arquitetura MVC
+* Autenticação e autorização
+* Gerenciamento de sessões
+* Validação de regras de negócio
+* CRUD completo
+* Segurança de senhas
+
+---
+
+## 👥 Autores
+
+- Bruno Fagundes Garcia - Nº2024314496
+- Cristian Ferreira Vaz - Nº2024314511

@@ -1,0 +1,63 @@
+@startuml modeling
+scale 1.00
+skinparam ClassBackgroundColor White
+skinparam ClassBorderColor Black
+skinparam ClassAttributeIconSize 0
+skinparam ClassFontStyle Bold
+skinparam ClassFontSize 12
+skinparam ClassAttributeFontSize 12
+skinparam NoteBackgroundColor White
+skinparam NoteBorderColor Black
+skinparam ArrowColor Black
+skinparam Shadowing False
+skinparam LineType Ortho
+hide Circle
+hide Empty Members
+
+title Planta's International Bank - Database
+
+' Entidades
+entity user {
+    * **id**: UUID <<pk>>
+    --
+    * username: VARCHAR(100) [unique]
+    * full_name: VARCHAR(255)
+    * email: VARCHAR(255) [unique]
+    * password: VARCHAR(255)
+    * created_at: TIMESTAMPZ = CURRENT_TIMESTAMP
+}
+
+
+entity account {
+    * **id**: UUID <<pk>>
+    --
+    * <i>user</i>: UUID <<fk>>
+    * balance: DECIMAL(15, 2) = 0.00
+}
+
+entity account_key {
+    * **id**: UUID <<pk>>
+    --
+    * <i>user</i>: UUID <<fk>>
+    type: ENUM('CPF', 'EMAIL', 'PHONE')
+    * key_value: VARCHAR(255) [unique]
+    status: ENUM('ACTIVE', 'DISABLED')
+}
+
+entity transaction {
+    * **id**: UUID <<pk>>
+    --
+    * <i>user_from</i>: UUID <<fk>>
+    * <i>user_to</i>: UUID <<fk>>
+    * type: ENUM(')
+    * amount: DECIMAL(15, 2)
+    * timestamp: TIMESTAMPZ = CURRENT_TIMESTAMP
+}
+
+' Relações
+user ||--|| account : "owns"
+account ||--|{ account_key : "has"
+account ||--o{ transaction : "origin(-)"
+account ||--o{ transaction : "destiny(+)"
+
+@enduml
