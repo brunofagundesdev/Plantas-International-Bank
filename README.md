@@ -1,97 +1,97 @@
 # 🌱 Planta's International Bank
 
-Sistema bancário web desenvolvido com CodeIgniter 4 como projeto acadêmico, simulando operações reais de um banco digital.
+A web-based banking system built with CodeIgniter 4, simulating real-world financial operations such as account management, transactions, and secure authentication.
 
 ---
 
-## 📌 Sobre o Projeto
+## 📌 Overview
 
-O **Planta's International Bank** é uma aplicação que permite o gerenciamento de contas bancárias, incluindo cadastro de usuários, autenticação segura e execução de operações financeiras.
+Planta's International Bank is a full-stack web application designed to replicate core features of a digital banking system. It allows users to create accounts, authenticate securely, perform transactions, and track financial activity.
 
-O sistema foi construído com foco em:
+The project focuses on:
 
-* Organização de código (MVC)
-* Segurança de dados
-* Regras de negócio consistentes
-* Experiência do usuário com interface web
+* Clean MVC architecture
+* Secure password handling
+* Consistent business rules
+* Transaction tracking
 
 ---
 
-## 🚀 Funcionalidades
+## 🚀 Features
 
-### 👤 Cadastro de Conta
+### 👤 Account Registration
 
-* Criação de usuário com:
+* Create a new user account with:
 
-  * Nome do cliente
-  * Depósito inicial
-* Geração automática de:
+  * Customer name
+  * Initial deposit
+* Automatically generated:
 
-  * Número da conta
+  * Account number
   * Username
-* Senha protegida com hash seguro (`password_hash`)
+* Secure password storage using hashing
 
 ---
 
-### 🔐 Login e Sessão
+### 🔐 Authentication & Sessions
 
-* Autenticação com username e senha
-* Validação com `password_verify`
-* Controle de sessão utilizando recursos do CodeIgniter 4
-
----
-
-### 💰 Extrato Bancário
-
-* Histórico completo de transações
-* Registro de:
-
-  * Entradas (créditos)
-  * Saídas (débitos)
-* Cada transação contém:
-
-  * Valor
-  * Data
-  * Tipo (Pix, boleto, transferência, etc)
-  * Descrição
+* Login with username and password
+* Password verification using secure hashing
+* Session management with CodeIgniter 4
 
 ---
 
-### 💸 Pagamentos
+### 💰 Transaction History (Statement)
 
-* Simulação de pagamentos via:
+* Complete record of all account activities
+* Includes:
+
+  * Credits (incoming funds)
+  * Debits (payments and transfers)
+* Each transaction stores:
+
+  * Amount
+  * Date
+  * Type (Pix, boleto, transfer, etc.)
+  * Description
+
+---
+
+### 💸 Payments
+
+* Simulated payment methods:
 
   * Pix
   * Boleto
-  * Débito
-* Atualização automática do saldo
-* Registro no extrato
+  * Debit
+* Automatic balance update
+* Transactions recorded in history
 
 ---
 
-### 🔄 Transferências
+### 🔄 Transfers
 
-* Transferência entre contas cadastradas
-* Atualização de saldo em tempo real:
+* Transfer funds between accounts
+* Real-time balance updates:
 
-  * Conta origem (débito)
-  * Conta destino (crédito)
-* Registro automático no histórico de ambas as contas
-
----
-
-## ⚠️ Regras de Negócio
-
-* Não é permitido realizar transações sem saldo suficiente
-* Todas as operações são registradas no extrato
-* Cada conta possui identificador único
-* As transações são armazenadas com data e tipo
+  * Sender account (debit)
+  * Receiver account (credit)
+* Logged in both accounts' transaction history
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## ⚠️ Business Rules
 
-* PHP 8.5.5
+* Transactions cannot be completed without sufficient balance
+* All operations are recorded in the transaction history
+* Each account has a unique identifier
+* Data consistency is enforced across operations
+
+---
+
+## 🛠️ Tech Stack
+
+* PHP 8+
 * CodeIgniter 4
 * MySQL
 * HTML5
@@ -99,65 +99,36 @@ O sistema foi construído com foco em:
 
 ---
 
-## 🔐 Segurança
+## 🔐 Security
 
-* Senhas armazenadas com `password_hash`
-* Verificação com `password_verify`
-* Uso de sessões para autenticação
-* Proteção contra operações inválidas (ex: saldo negativo)
-
----
-
-## 💻 Ambiente de Desenvolvimento
-
-* XAMPP (Apache + MySQL)
-* Execução local
+* Passwords are hashed using `password_hash`
+* Password verification with `password_verify`
+* Session-based authentication
+* Protection against invalid operations (e.g., negative balance)
 
 ---
 
-## ⚙️ Como Executar o Projeto
+## 🗄️ Database
 
-1. Clone o repositório:
+The database schema is available at:
 
-   ``` bash
-   git clone <url-do-repositorio>
-   ```
-
-2. Configure o banco de dados:
-
-   * Crie um banco no MySQL
-   * Importe o arquivo `.sql` do projeto
-
-3. Configure o arquivo `.env`:
-
-   ```env
-   database.default.hostname = localhost
-   database.default.database = plantas_international-bank
-   database.default.username = root
-   database.default.password = 
-   database.default.DBDriver = MySQLi
-   ```
-
-4. Inicie o servidor:
-
-   ```
-   http://localhost/seu-projeto/public
-   ```
+```
+/database/schema.sql
+```
 
 ---
 
-## 📚 Conceitos Aplicados
+## 📚 Concepts Applied
 
-* Arquitetura MVC
-* Autenticação e autorização
-* Gerenciamento de sessões
-* Validação de regras de negócio
-* CRUD completo
-* Segurança de senhas
+* MVC Architecture
+* Authentication & Authorization
+* Session Management
+* CRUD Operations
+* Business Logic Validation
+* Secure Password Handling
 
 ---
 
-## 👥 Autores
+## 👥 Authors
 
-- Bruno Fagundes Garcia - Nº2024314496
-- Cristian Ferreira Vaz - Nº2024314511
+Developed as an academic project.

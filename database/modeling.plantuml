@@ -24,9 +24,7 @@ entity user {
     * full_name: VARCHAR(255)
     * email: VARCHAR(255) [unique]
     * password: VARCHAR(255)
-    * created_at: TIMESTAMPZ = CURRENT_TIMESTAMP
 }
-
 
 entity account {
     * **id**: UUID <<pk>>
@@ -49,7 +47,7 @@ entity transaction {
     --
     * <i>user_from</i>: UUID <<fk>>
     * <i>user_to</i>: UUID <<fk>>
-    * type: ENUM(')
+    * type: ENUM('')
     * amount: DECIMAL(15, 2)
     * timestamp: TIMESTAMPZ = CURRENT_TIMESTAMP
 }
