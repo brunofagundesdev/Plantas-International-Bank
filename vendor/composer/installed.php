@@ -3,13 +3,22 @@
         'name' => 'codeigniter4/framework',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'e625a3eff84720e57c253682c3c45ad709943aa5',
+        'reference' => '5f9819970e46b3d8564da67159184106707add8f',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
+        'brick/math' => array(
+            'pretty_version' => '0.14.8',
+            'version' => '0.14.8.0',
+            'reference' => '63422359a44b7f06cae63c3b429b59e8efcc0629',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../brick/math',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'clue/ndjson-react' => array(
             'pretty_version' => 'v1.3.0',
             'version' => '1.3.0.0',
@@ -31,7 +40,7 @@
         'codeigniter4/framework' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'e625a3eff84720e57c253682c3c45ad709943aa5',
+            'reference' => '5f9819970e46b3d8564da67159184106707add8f',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -292,6 +301,24 @@
                 0 => '1.0|2.0|3.0',
             ),
         ),
+        'ramsey/collection' => array(
+            'pretty_version' => '2.1.1',
+            'version' => '2.1.1.0',
+            'reference' => '344572933ad0181accbf4ba763e85a0306a8c5e2',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../ramsey/collection',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'ramsey/uuid' => array(
+            'pretty_version' => '4.9.2',
+            'version' => '4.9.2.0',
+            'reference' => '8429c78ca35a09f27565311b98101e2826affde0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../ramsey/uuid',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'react/cache' => array(
             'pretty_version' => 'v1.2.0',
             'version' => '1.2.0.0',
@@ -354,6 +381,12 @@
             'install_path' => __DIR__ . '/../react/stream',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'rhumsaa/uuid' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => '4.9.2',
+            ),
         ),
         'sebastian/cli-parser' => array(
             'pretty_version' => '3.0.2',

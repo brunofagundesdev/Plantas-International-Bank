@@ -31,6 +31,8 @@ return array(
     'React\\Dns\\' => array($vendorDir . '/react/dns/src'),
     'React\\ChildProcess\\' => array($vendorDir . '/react/child-process/src'),
     'React\\Cache\\' => array($vendorDir . '/react/cache/src'),
+    'Ramsey\\Uuid\\' => array($vendorDir . '/ramsey/uuid/src'),
+    'Ramsey\\Collection\\' => array($vendorDir . '/ramsey/collection/src'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/src'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
     'Psr\\EventDispatcher\\' => array($vendorDir . '/psr/event-dispatcher/src'),
@@ -52,4 +54,5 @@ return array(
     'CodeIgniter\\CodingStandard\\' => array($vendorDir . '/codeigniter/coding-standard/src'),
     'CodeIgniter\\' => array($baseDir . '/system'),
     'Clue\\React\\NDJson\\' => array($vendorDir . '/clue/ndjson-react/src'),
+    'Brick\\Math\\' => array($vendorDir . '/brick/math/src'),
 );
